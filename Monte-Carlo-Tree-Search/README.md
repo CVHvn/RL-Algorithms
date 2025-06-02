@@ -33,6 +33,7 @@ MCTS is divided into the following components:
 ## Code Structure
 
 Code for testing MCTS with **CartPole-v1** in [this notebook](Monte-Carlo-Tree-Search\MCTS.ipynb). Note: the code may contain some bugs or may not be optimal!!!
+[nodebook v2](Monte-Carlo-Tree-Search\MCTS_v2.ipynb) is clean version suitable with AlphaZero and Muzero pseudo codes
 
 Need to tune the following hyperparameters:
 - TOTAL_EPISODE: number of episodes to test (since MCTS is random, each episode will give different results, see **Result** section)
@@ -49,7 +50,7 @@ Need to tune the following hyperparameters:
 
 ## Result
 
-Results were tested with $gamma \in [0.9, 0.99, 0.997]$, SEARCH_STEP $\in [50, 100, 200, 500]$. With gamma = 0.997, I also tried SEARCH_STEP = 1000 and REUSE_TREE = True.
+Results were tested with $gamma \in [0.9, 0.99, 0.997]$, SEARCH_STEP $\in [10, 20, 50, 100, 200, 500]$. With gamma = 0.997, I also tried SEARCH_STEP = 1000 and REUSE_TREE = True.
 
 Result table when tuning gamma and SEARCH_STEP.
 
@@ -57,13 +58,15 @@ Result table when tuning gamma and SEARCH_STEP.
 
 Results
 
-| Steps  | Mean ± Std (γ=0.99) | Mean ± Std (γ=0.997) | Mean ± Std (γ=1)    | Time (mean) |
-|--------|----------------------|----------------------|---------------------|-------------|
-| 50     | **424.4 ± 106.54**       | 421.3 ± 78.81        | 374.9 ± 82.62       | ~0:23        |
-| 100    | 426.3 ± 85.60        | **450.7 ± 82.47**        | 347.3 ± 113.70      | ~0:53        |
-| 200    | **391.8 ± 136.19**       | 322.8 ± 88.25        | 390.4 ± 83.91       | ~2:00        |
-| 500    | 396.0 ± 109.84       | 368.3 ± 78.95        | **403.9 ± 91.12**       | ~7:36        |
-| 1000   | —                    | 383.6 ± 104.79       | —                   | 21:58       |
+| Steps  | Mean ± Std (γ=0.99) | Mean ± Std (γ=0.997) | Mean ± Std (γ=1)    | Time (mean)  |
+|--------|----------------------|---------------------|---------------------|--------------|
+| 10     | 402.9 ± 104.68       | **419.0 ± 107.51**  | 376.4 ± 109.66      | ~0:04        |
+| 20     | 389.8 ± 119.12       | **395.8 ± 101.98**  | 387.1 ± 118.68      | ~0:08        |
+| 50     | **424.4 ± 106.54**   | 421.3 ± 78.81       | 374.9 ± 82.62       | ~0:23        |
+| 100    | 426.3 ± 85.60        | **450.7 ± 82.47**   | 347.3 ± 113.70      | ~0:53        |
+| 200    | **391.8 ± 136.19**   | 322.8 ± 88.25       | 390.4 ± 83.91       | ~2:00        |
+| 500    | 396.0 ± 109.84       | 368.3 ± 78.95       | **403.9 ± 91.12**   | ~7:36        |
+| 1000   | —                    | 383.6 ± 104.79      | —                   | 21:58        |
 
 </div>
 
@@ -73,8 +76,8 @@ With gamma = 0.997:
     - But requires an average of **21 minutes 58 seconds** to complete. 
     - Combined with the result table above, we can see that total rewards don't increase when increasing SEARCH_STEP (or at least need to increase SEARCH_STEP very high, increasing by several times won't have clear effects) but the runtime is very long --> not worth trying more.
 - Testing with REUSE_TREE:
-    - Results in the table below
-    - We can see the results are not improved (lower than not reusing tree), however tuning gamma may be give different results.
+    - Results in the table below 
+    - When using REUSE TREE, the number of searches can be reduced while still giving good results (work with only 10 searchs). However, when the number of searches is increased, the results will not increase (or decrease).
     - With the above results, using REUSE TREE doesn't show significant effectiveness (even worse) while search time is very long --> not worth trying more.
 
 <div align="center">
@@ -83,9 +86,11 @@ REUSE_TREE gamma = 0.997
 
 | Steps | Mean ± Std       | Time     |
 |-------|------------------|----------|
+| 10    | 467.1 ± 60.01    | 00:19  |
+| 20    | 326.4 ± 100.66   | 00:21  |
 | 50    | 343.3 ± 79.01    | 01:03  |
 | 100   | 400.9 ± 101.57   | 02:49  |
-| 200   | **437.6 ± 97.10**    | 07:10  |
+| 200   | 437.6 ± 97.10    | 07:10  |
 | 500   | 387.5 ± 81.05    | 15:34  |
 
 </div>

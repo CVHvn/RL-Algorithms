@@ -33,6 +33,7 @@ MCST được chia nhỏ thành các phần sau:
 ## Code Structure
 
 Code chạy thử nghiệm MCTS với **CartPole-v1** trong [nodebook này](Monte-Carlo-Tree-Search\MCTS.ipynb). Lưu ý: code có thể tồn tại một số bug hoặc không tối ưu!!!
+[nodebook v2](Monte-Carlo-Tree-Search\MCTS_v2.ipynb) được code clean để giống với pseudo code của AlphaZero và Muzero
 
 Cần tunning các siêu tham số sau:
 - TOTAL_EPISODE: số episode sẽ test (vì MCTS ngẫu nhiên nên mỗi episode sẽ cho kết quả khác nhau, xem phần **Result**)
@@ -49,7 +50,7 @@ Cần tunning các siêu tham số sau:
 
 ## Result
 
-Kết quả được thử nghiệm với $gamma \in [0.9, 0.99, 0.997]$, SEARCH_STEP $\in [50, 100, 200, 500]$. Với gamma = 0.997, tôi có thử thêm với SEARCH_STEP = 1000 và REUSE_TREE = True.
+Kết quả được thử nghiệm với $gamma \in [0.9, 0.99, 0.997]$, SEARCH_STEP $\in [10, 20, 50, 100, 200, 500]$. Với gamma = 0.997, tôi có thử thêm với SEARCH_STEP = 1000 và REUSE_TREE = True.
 
 Bảng kết quả khi tunning gamma và SEARCH_STEP.
 
@@ -57,13 +58,15 @@ Bảng kết quả khi tunning gamma và SEARCH_STEP.
 
 Kết quả
 
-| Steps  | Mean ± Std (γ=0.99) | Mean ± Std (γ=0.997) | Mean ± Std (γ=1)    | Time (mean) |
-|--------|----------------------|----------------------|---------------------|-------------|
-| 50     | **424.4 ± 106.54**       | 421.3 ± 78.81        | 374.9 ± 82.62       | ~0:23        |
-| 100    | 426.3 ± 85.60        | **450.7 ± 82.47**        | 347.3 ± 113.70      | ~0:53        |
-| 200    | **391.8 ± 136.19**       | 322.8 ± 88.25        | 390.4 ± 83.91       | ~2:00        |
-| 500    | 396.0 ± 109.84       | 368.3 ± 78.95        | **403.9 ± 91.12**       | ~7:36        |
-| 1000   | —                    | 383.6 ± 104.79       | —                   | 21:58       |
+| Steps  | Mean ± Std (γ=0.99) | Mean ± Std (γ=0.997) | Mean ± Std (γ=1)    | Time (mean)  |
+|--------|----------------------|---------------------|---------------------|--------------|
+| 10     | 402.9 ± 104.68       | **419.0 ± 107.51**  | 376.4 ± 109.66      | ~0:04        |
+| 20     | 389.8 ± 119.12       | **395.8 ± 101.98**  | 387.1 ± 118.68      | ~0:08        |
+| 50     | **424.4 ± 106.54**   | 421.3 ± 78.81       | 374.9 ± 82.62       | ~0:23        |
+| 100    | 426.3 ± 85.60        | **450.7 ± 82.47**   | 347.3 ± 113.70      | ~0:53        |
+| 200    | **391.8 ± 136.19**   | 322.8 ± 88.25       | 390.4 ± 83.91       | ~2:00        |
+| 500    | 396.0 ± 109.84       | 368.3 ± 78.95       | **403.9 ± 91.12**   | ~7:36        |
+| 1000   | —                    | 383.6 ± 104.79      | —                   | 21:58        |
 
 </div>
 
@@ -74,7 +77,7 @@ Với gamma = 0.997:
     - Kết hợp với bảng kết quả trên, có thể thấy tổng rewards không được tăng khi tăng SEARCH_STEP (hoặc ít nhất cần tăng SEARCH_STEP lên rất cao, tăng lên gấp vài lần sẽ không có tác dụng rõ ràng) nhưng thời gian chạy rất lâu --> không đáng thử thêm.
 - Thử với REUSE_TREE:
     - Kết quả ở bảng bên dưới
-    - Có thể thấy kết quả không được cải thiện (thấp hơn không reuse cây), tuy nhiên có thể tunning gamma sẽ có kết quả khác.
+    - Khi dùng REUSE TREE có thể giảm số lần search mà vẫn cho kết quả tốt (chỉ cần search 10 lần). Tuy nhiên khi tăng số lần search thì kết quả không tăng thêm (hoặc giảm đi).
     - Với kết quả trên thì việc dùng REUSE TREE sẽ không cho thấy hiệu quả đáng kể (thậm chí tệ hơn) mà thời gian search rất lâu --> không đáng thử thêm.
 
 <div align="center">
@@ -83,9 +86,11 @@ REUSE_TREE gamma = 0.997
 
 | Steps | Mean ± Std       | Time     |
 |-------|------------------|----------|
+| 10    | 467.1 ± 60.01    | 00:19  |
+| 20    | 326.4 ± 100.66   | 00:21  |
 | 50    | 343.3 ± 79.01    | 01:03  |
 | 100   | 400.9 ± 101.57   | 02:49  |
-| 200   | **437.6 ± 97.10**    | 07:10  |
+| 200   | 437.6 ± 97.10    | 07:10  |
 | 500   | 387.5 ± 81.05    | 15:34  |
 
 </div>
@@ -99,4 +104,3 @@ REUSE_TREE gamma = 0.997
 - [geeksforgeeks MCTS](https://www.geeksforgeeks.org/ml-monte-carlo-tree-search-mcts/)
 - [medium _michelangelo_ MCTS for dummies](https://medium.com/@_michelangelo_/monte-carlo-tree-search-mcts-algorithm-for-dummies-74b2bae53bfa)
 - [gibberblot mcts](https://gibberblot.github.io/rl-notes/single-agent/mcts.html)
-
