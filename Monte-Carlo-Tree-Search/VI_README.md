@@ -32,8 +32,8 @@ MCST được chia nhỏ thành các phần sau:
 
 ## Code Structure
 
-Code chạy thử nghiệm MCTS với **CartPole-v1** trong [nodebook này](Monte-Carlo-Tree-Search\MCTS.ipynb). Lưu ý: code có thể tồn tại một số bug hoặc không tối ưu!!!
-[nodebook v2](Monte-Carlo-Tree-Search\MCTS_v2.ipynb) được code clean để giống với pseudo code của AlphaZero và Muzero
+Code chạy thử nghiệm MCTS với **CartPole-v1** trong [nodebook này](MCTS.ipynb). Lưu ý: code có thể tồn tại một số bug hoặc không tối ưu!!!
+[nodebook v2](MCTS_v2.ipynb) được code clean để giống với pseudo code của AlphaZero và Muzero
 
 Cần tunning các siêu tham số sau:
 - TOTAL_EPISODE: số episode sẽ test (vì MCTS ngẫu nhiên nên mỗi episode sẽ cho kết quả khác nhau, xem phần **Result**)

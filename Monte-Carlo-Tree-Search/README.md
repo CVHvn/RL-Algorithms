@@ -32,8 +32,8 @@ MCTS is divided into the following components:
 
 ## Code Structure
 
-Code for testing MCTS with **CartPole-v1** in [this notebook](Monte-Carlo-Tree-Search\MCTS.ipynb). Note: the code may contain some bugs or may not be optimal!!!
-[nodebook v2](Monte-Carlo-Tree-Search\MCTS_v2.ipynb) is clean version suitable with AlphaZero and Muzero pseudo codes
+Code for testing MCTS with **CartPole-v1** in [this notebook](MCTS.ipynb). Note: the code may contain some bugs or may not be optimal!!!
+[nodebook v2](MCTS_v2.ipynb) is clean version suitable with AlphaZero and Muzero pseudo codes
 
 Need to tune the following hyperparameters:
 - TOTAL_EPISODE: number of episodes to test (since MCTS is random, each episode will give different results, see **Result** section)
