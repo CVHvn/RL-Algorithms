@@ -8,4 +8,6 @@ This project is minimal implementation of some RL algorithms. When I read new RL
 
 ## [Monte Carlo Search Tree](Monte-Carlo-Tree-Search)
 
+## [AlphaZero](AlphaZero)
+
 # Reference

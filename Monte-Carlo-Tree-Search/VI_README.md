@@ -2,49 +2,51 @@
 
 ## Introduction
 
-Monte Carlo Tree Search (MCTS) là 1 thuật toán RL kết hợp Monte Carlo (thực hiện hành động ngẫu nhiên và thống kê kết quả) và kỹ thuật tìm kiếm dựa trên cây để thực hiện heuristic search chọn action. MCTS là một thuật toán nổi tiếng và là nền tảng của các thuật toán RL nâng cao như AlphaGo, AlphaZero, Muzero, ... 
+`Monte Carlo Tree Search (MCTS)` là 1 thuật toán RL kết hợp `Monte Carlo` (thực hiện hành động ngẫu nhiên và thống kê kết quả) và `kỹ thuật tìm kiếm dựa trên cây` để thực hiện heuristic search chọn action. MCTS là một thuật toán nổi tiếng và là nền tảng của các thuật toán RL nâng cao như AlphaGo, AlphaZero, Muzero, ... 
 
 ## Algorithm
 
 Khởi đầu với state $s_0$, thuật toán sẽ lặp lại việc dùng MCST để chọn best action $a_t$ cho state $s_t$ với $t \in 0..T$, T là terminal state. Best action $a_t$ sẽ được thực hiện và nhận về phần thưởng $r_t$ và next state $s_{t+1}$.
 
 MCST được chia nhỏ thành các phần sau:
-- **node**: 1 node trên cây sẽ gồm:
+- `**node**`: 1 node trên cây sẽ gồm:
     - N: số lần visit (số lần được đi qua khi explore).
     - value: tổng return (tổng phần thưởng) các episode của các lần explore qua node đó (để dễ code sẽ lưu tổng thay vì tính expected return).
     - Cần lưu environment bắt đầu từ state của node này (sử dụng copy.deepcopy) để dễ dàng simulate.
-- **explore**: 
+- `**explore**`: 
     - Từ gốc cây (root), chọn ra nút lá (node cần khám phá thêm, nút cần giả lập).
         - Từ root, đệ quy quá trình dùng hàm score để chọn nút con có score cao nhất, dừng lại khi đến terminal node hoặc 1 node chưa khám phá hết.
         - Nếu dùng lại ở node chưa được khám phá hết: chọn ngẫu nhiên 1 hành động chưa được khám phá (chưa có node con này), tạo node con mới, đi xuống node con này.
         - Giả lập (simulate) 1 episode ngẫu nhiên với node này.
         - Backpropagation về nút gốc.
-- **Hàm score**: 
+- `**Hàm score**`: 
     - Hàm được tính theo công thức
-        - node mới (N=0): $score = \inf$
-        - node đã explore (N>0): $score = \frac{V}{N} + c \sqrt\frac{2\ln(N_p)}{N}$
+        - node mới (N=0): `$score = \inf$`
+        - node đã explore (N>0): `$score = \frac{V}{N} + c \sqrt\frac{2\ln(N_p)}{N}$`
     - Với $c = \frac{1}{\sqrt 2}$, $N_p$ là số lần visit của nút cha nếu node này có cha (không phải root) hoặc chính nó (nếu là root).
     - c được khuyến nghị là $\sqrt 2$ hoặc $\frac{1}{\sqrt 2}$, tăng c sẽ làm giảm sự phụ thuộc vào value (expected return) đang ước tính cho node đó (khuyến khích khám phá thêm), giảm c sẽ làm quá trình explore tin tưởng (phụ thuộc) và value (expected return) đang ước tính.
     - Một số tài liệu sử dụng $score = \frac{V}{N} + c \sqrt\frac{\ln(N_p)}{N}$ với $c = \sqrt 2$
-- **Giả lập**: thực hiện hành động ngẫu nhiên bắt đầu từ state của node đến terminal state.
-- **Backpropagation**: cập nhật value (expected return) của các node thêm return từ episode giả lập vừa thực hiện và số lần visit của node lên 1 cho tất cả các node đã đi qua trong quá trình explore.
-- **chọn best action**: trả về hành động có số lượt visit cao nhất trong quá trình search (nếu có nhiều hành động tốt nhất --> chọn ngẫu nhiên).
+- `**Giả lập**`: thực hiện hành động ngẫu nhiên bắt đầu từ state của node đến terminal state.
+- `**Backpropagation**`: cập nhật value (expected return) của các node thêm return từ episode giả lập vừa thực hiện và số lần visit của node lên 1 cho tất cả các node đã đi qua trong quá trình explore.
+- `**chọn best action**`: trả về hành động có số lượt visit cao nhất trong quá trình search (nếu có nhiều hành động tốt nhất --> chọn ngẫu nhiên).
 
 ## Code Structure
 
-Code chạy thử nghiệm MCTS với **CartPole-v1** trong [nodebook này](MCTS.ipynb). Lưu ý: code có thể tồn tại một số bug hoặc không tối ưu!!!
+Code chạy thử nghiệm MCTS với `**CartPole-v1**` trong [nodebook này](MCTS.ipynb). Lưu ý: code có thể tồn tại một số bug hoặc không tối ưu!!!
 [nodebook v2](MCTS_v2.ipynb) được code clean để giống với pseudo code của AlphaZero và Muzero
 
+## Hyperparameter
+
 Cần tunning các siêu tham số sau:
-- TOTAL_EPISODE: số episode sẽ test (vì MCTS ngẫu nhiên nên mỗi episode sẽ cho kết quả khác nhau, xem phần **Result**)
-- GAMMA: tinh chỉnh GAMMA từ 0.9 đến 1
-- REUSE_TREE: có 2 biến thể của MCTS:
+- `TOTAL_EPISODE`: số episode sẽ test (vì MCTS ngẫu nhiên nên mỗi episode sẽ cho kết quả khác nhau, xem phần **Result**)
+- `GAMMA`: tinh chỉnh GAMMA từ 0.9 đến 1
+- `REUSE_TREE`: có 2 biến thể của MCTS:
     - REUSE_TREE = FALSE: built lại tree từ đầu với mỗi $s_t$.
     - REUSE_TREE = True: tái sử dụng lại cây con đã build từ $s_{t-1}$ cho $s_t$, chỉ cần xóa (detach parent cho nút con này).
-- TIMEOUT: số giây trong 1 lần search:
+- `TIMEOUT`: số giây trong 1 lần search:
     - NULL nếu không muốn giới hạn thời gian
     - cần gán lớn hơn 0 nếu SEARCH_STEP = 0 hoặc SEARCH_STEP = NULL
-- SEARCH_STEP: số step explore trong 1 lần search:
+- `SEARCH_STEP`: số step explore trong 1 lần search:
     - NULL nếu muốn giới hạn thời gian (dùng TIMEOUT)
     - cần gán lớn hơn 0 nếu SEARCH_STEP = 0 hoặc SEARCH_STEP = NULL
 

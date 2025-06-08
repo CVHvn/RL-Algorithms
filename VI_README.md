@@ -6,4 +6,8 @@ Project bao gồm triển khai tối thiểu (minimal implementation) của 1 s�
 
 # Algorithms
 
+## [Monte Carlo Search Tree](Monte-Carlo-Tree-Search)
+
+## [AlphaZero](AlphaZero)
+
 # Reference
