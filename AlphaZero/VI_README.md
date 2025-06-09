@@ -2,9 +2,11 @@
 
 ## Introduction
 
-AlphaZero là một thuật toán trí tuệ nhân tạo tiên tiến do DeepMind (thuộc Google) phát triển, nổi bật với khả năng tự học để đạt trình độ siêu việt trong các trò chơi chiến lược như cờ vua, cờ vây (Go) và shogi (cờ Nhật). AlphaZero cũng có thể được huấn luyện để giải quyết các các game hoặc mô phỏng đơn giản khác. 
+Project này là minimal implementation [AlphaZero](https://arxiv.org/pdf/1712.01815).
 
-AlphaZero là cải tiến từ AlphaGo, có thể tự học bằng self play (tương tự các thuật toán Reinforcement khác) mà không cần dữ liệu cách chơi thu thập từ người chơi như AlphaGo.
+[AlphaZero](https://arxiv.org/pdf/1712.01815) là một thuật toán trí tuệ nhân tạo tiên tiến do DeepMind (thuộc Google) phát triển, nổi bật với khả năng tự học để đạt trình độ siêu việt trong các trò chơi chiến lược như cờ vua, cờ vây (Go) và shogi (cờ Nhật). AlphaZero cũng có thể được huấn luyện để giải quyết các các game hoặc mô phỏng đơn giản khác. 
+
+AlphaZero là cải tiến từ AlphaGo, có thể tự học bằng self play (tương tự các thuật toán Reinforcement khác) mà không cần dữ liệu cách chơi thu thập từ người chơi như AlphaGo. AlphaZero là mở rộng của AlphaGo Zero cho nhiều môi trường khác cờ vay (AlphaGo --> AlphaGo Zero --> AlphaZero). Theo các nghiên cứu, AlphaGo sẽ bắt chước theo cách chơi của con người, còn AlphaZero có thể vượt trội con người bằng việc tự tìm ra cách hành động khác.
 
 Ý tưởng chính của AlphaZero là kết hợp mạng neural học sâu và Monte Carlo Tree Search (MCTS). Thay thế việc giả lập 1 lần chơi ngẫu nhiên (random simulate) bằng kết quả từ neural network. Lặp lại việc sử dụng MCTS và mạng neural đang huấn luyện để thu thập dữ liệu và dùng dữ liệu này huấn luyện mô hình.
 
@@ -31,6 +33,10 @@ Project sử dụng jupyter nodebook, test trên environment `**CartPole-v1**`:
 - Notebook AlphaZero chạy song song nhiều worker (hoặc actor) để thu thập dữ liệu huấn luyện và testing [AlphaZero_multi_worker.ipynb](AlphaZero_multi_worker.ipynb)
 
 Lưu ý: code có thể tồn tại một số bug hoặc không tối ưu!!!
+
+## Trained Model
+
+Bạn có thể load [model đã train](trained_model)
 
 ## Hyperparameter
 
@@ -74,3 +80,4 @@ Khi dùng CE, thuật toán giúp model học rất nhanh và đạt tổng ph�
 ## Reference
 - [medium _michelangelo_ MCTS for dummies](https://medium.com/@_michelangelo_/alphazero-for-dummies-5bcc713fc9c6)
 - [erenon AlphaZero pseudo code](https://gist.github.com/erenon/cb42f6656e5e04e854e6f44a7ac54023)
+- [AlphaZero paper](https://arxiv.org/pdf/1712.01815)

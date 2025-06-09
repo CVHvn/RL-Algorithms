@@ -10,4 +10,6 @@ This project is minimal implementation of some RL algorithms. When I read new RL
 
 ## [AlphaZero](AlphaZero)
 
+## [Deep-Q-Network (DQN)](Deep-Q-Network-variants/DQN)
+
 # Reference

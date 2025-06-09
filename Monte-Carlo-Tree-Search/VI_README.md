@@ -2,7 +2,7 @@
 
 ## Introduction
 
-`Monte Carlo Tree Search (MCTS)` là 1 thuật toán RL kết hợp `Monte Carlo` (thực hiện hành động ngẫu nhiên và thống kê kết quả) và `kỹ thuật tìm kiếm dựa trên cây` để thực hiện heuristic search chọn action. MCTS là một thuật toán nổi tiếng và là nền tảng của các thuật toán RL nâng cao như AlphaGo, AlphaZero, Muzero, ... 
+Project này là minimal implementation `Monte Carlo Tree Search (MCTS)`. `Monte Carlo Tree Search (MCTS)` là 1 thuật toán RL kết hợp `Monte Carlo` (thực hiện hành động ngẫu nhiên và thống kê kết quả) và `kỹ thuật tìm kiếm dựa trên cây` để thực hiện heuristic search chọn action. MCTS là một thuật toán nổi tiếng và là nền tảng của các thuật toán RL nâng cao như AlphaGo, AlphaZero, Muzero, ... 
 
 ## Algorithm
 

@@ -2,9 +2,11 @@
 
 ## Introduction
 
-AlphaZero is an advanced artificial intelligence algorithm developed by DeepMind (Google), distinguished by its ability to self-learn to achieve superhuman performance in strategic games such as chess, Go, and shogi (Japanese chess). AlphaZero can also be trained to solve other simple games or simulations.
+This project is my minimal implementation of [AlphaZero](https://arxiv.org/pdf/1712.01815).
 
-AlphaZero is an improvement upon AlphaGo, capable of self-learning through self-play (similar to other Reinforcement Learning algorithms) without needing game data collected from human players (AlphaGo).
+`AlphaZero` is an advanced artificial intelligence algorithm developed by DeepMind (Google), distinguished by its ability to self-learn to achieve superhuman performance in strategic games such as chess, Go, and shogi (Japanese chess). AlphaZero can also be trained to solve other simple games or simulations.
+
+AlphaZero is an improvement upon AlphaGo, capable of self-learning through self-play (similar to other Reinforcement Learning algorithms) without needing game data collected from human players (AlphaGo). AlphaZero is generalized the algorithm of AlphaGo Zero for many environments other than Go (AlphaGo --> AlphaGo Zero --> AlphaZero). According to research, AlphaGo will imitate the way humans play, while AlphaZero can outperform humans by finding different ways of acting.
 
 The core idea of AlphaZero is to combine deep neural networks and Monte Carlo Tree Search (MCTS). It replaces random game simulations with results from a neural network. This process of using MCTS and the training neural network is iterated to collect data, which is then used to train the model.
 
@@ -31,6 +33,10 @@ The project uses Jupyter notebooks and is tested on the `**CartPole-v1**` enviro
 - AlphaZero Notebook running multiple workers (or actors) in parallel to collect training data and for testing [AlphaZero_multi_worker.ipynb](AlphaZero_multi_worker.ipynb)
 
 Note: the code may contain some bugs or not be fully optimized!!!
+
+## Trained Model
+
+You can load [trained model](trained_model)
 
 ## Hyperparameter
 
@@ -74,3 +80,4 @@ When using CE, the algorithm enables the model to learn very quickly and reach t
 ## Reference
 - [medium _michelangelo_ MCTS for dummies](https://medium.com/@_michelangelo_/alphazero-for-dummies-5bcc713fc9c6)
 - [erenon AlphaZero pseudo code](https://gist.github.com/erenon/cb42f6656e5e04e854e6f44a7ac54023)
+- [AlphaZero paper](https://arxiv.org/pdf/1712.01815)

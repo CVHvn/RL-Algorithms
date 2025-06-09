@@ -2,7 +2,7 @@
 
 ## Introduction
 
-`Monte Carlo Tree Search (MCTS)` is an RL algorithm that combines `Monte Carlo` (performing random actions and collecting statistics) with `tree-based search techniques` to perform heuristic search for action selection. MCTS is a famous algorithm and serves as the foundation for advanced RL algorithms like AlphaGo, AlphaZero, MuZero, etc.
+This project is my minimal implementation of `Monte Carlo Tree Search (MCTS)`. `Monte Carlo Tree Search (MCTS)` is an RL algorithm that combines `Monte Carlo` (performing random actions and collecting statistics) with `tree-based search techniques` to perform heuristic search for action selection. MCTS is a famous algorithm and serves as the foundation for advanced RL algorithms like AlphaGo, AlphaZero, MuZero, etc.
 
 ## Algorithm
 
