@@ -12,4 +12,8 @@ Project bao gồm minimal implementation của 1 số thuật toán RL. Khi tôi
 
 ## [Deep-Q-Network (DQN)](Deep-Q-Network-variants/DQN)
 
+## [Double Deep-Q-Network (DQN)](Deep-Q-Network-variants/DoubleDQN)
+
+## [Dueling Deep-Q-Network (DQN)](Deep-Q-Network-variants/Dueling_DQN)
+
 # Reference

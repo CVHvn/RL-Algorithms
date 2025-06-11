@@ -45,7 +45,7 @@ The code for testing DQN with `**CartPole-v1**` is in this [notebook](Double_DQN
 
 ## Trained Model
 
-You can load [the trained model](figure).
+You can load [the trained model](trained_model).
 
 ## Hyperparameter
 The hyperparameters are similar to DQN, but you should be careful when tuning as the algorithm is sensitive to them:

@@ -12,4 +12,8 @@ This project is minimal implementation of some RL algorithms. When I read new RL
 
 ## [Deep-Q-Network (DQN)](Deep-Q-Network-variants/DQN)
 
+## [Double Deep-Q-Network (DQN)](Deep-Q-Network-variants/DoubleDQN)
+
+## [Dueling Deep-Q-Network (DQN)](Deep-Q-Network-variants/Dueling_DQN)
+
 # Reference

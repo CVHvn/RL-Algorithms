@@ -81,7 +81,7 @@ The code for running the DQN experiment with `**CartPole-v1**` is available in [
 
 ## Trained Model
 
-You can load the [trained model](figure).
+You can load the [trained model](trained_model).
 
 ## Hyperparameters
 DQN is sensitive to hyperparameters. For this project, I referred to the hyperparameters from the [rl-baselines3-zoo](https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/dqn.yml) to ensure the code works. They don't specify default values in the file, and the number of training steps/epochs is not clearly defined, so I set `total_steps` to 500,000:

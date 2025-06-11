@@ -45,7 +45,7 @@ Code chạy thử nghiệm MCTS với `**CartPole-v1**` trong [nodebook này](Do
 
 ## Trained Model
 
-Bạn có thể load [trained model](figure)
+Bạn có thể load [trained model](trained_model)
 
 ## Hyperparameter
 Siêu tham số tương tự DQN, bạn cần lưu ý khi tunning vì thuật toán nhạy cảm với siêu tham số:

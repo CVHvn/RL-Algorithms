@@ -81,7 +81,7 @@ Code chạy thử nghiệm MCTS với `**CartPole-v1**` trong [nodebook này](DQ
 
 ## Trained Model
 
-Bạn có thể load [trained model](figure)
+Bạn có thể load [trained model](trained_model)
 
 ## Hyperparameter
 Vì DQN nhạy cảm với siêu tham số, tôi tham khảo hyperparameter tại [rl-baselines3-zoo hyperparameter](https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/dqn.yml) để đảm bảo code hoạt động!. Họ không để tham số mặc định trong file và số step hoặc số epoch train không để rõ ràng nên tôi gán là 500000:
