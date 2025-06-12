@@ -77,7 +77,7 @@ DQN is a well-known off-policy, model-free Reinforcement Learning (RL) algorithm
 
 ## Code Structure
 
-The code for running the DQN experiment with `**CartPole-v1**` is available in [this notebook](DQN.ipynb). Note: the code may contain some bugs or may not be fully optimized!
+The code for testing DQN with `**CartPole-v1**` is available in [this notebook](DQN.ipynb). Note: the code may contain some bugs or may not be fully optimized!
 
 ## Trained Model
 

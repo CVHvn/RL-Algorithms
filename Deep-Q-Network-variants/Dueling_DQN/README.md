@@ -24,7 +24,7 @@ Then, when training for action $a_1$, other actions will also be affected by bac
 
 ## Code Structure
 
-The code runs an MCTS experiment with `**CartPole-v1**` in [this notebook](Dueling_DQN.ipynb). Note: the code may contain some bugs or may not be optimal!!!
+The code for testing Dueling DQN with `**CartPole-v1**` in [this notebook](Dueling_DQN.ipynb). Note: the code may contain some bugs or may not be optimal!!!
 
 ## Trained Model
 

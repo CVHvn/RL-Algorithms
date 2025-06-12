@@ -41,7 +41,7 @@ $$L(\theta) = (y_t - Q(s_t, a_t; \theta))² = (y_t - Q_{\text{online}}(s_t, a_t)
 
 ## Code Structure
 
-Code chạy thử nghiệm MCTS với `**CartPole-v1**` trong [nodebook này](Double_DQN.ipynb). Lưu ý: code có thể tồn tại một số bug hoặc không tối ưu!!!
+Code chạy thử nghiệm Double DQN với `**CartPole-v1**` trong [nodebook này](Double_DQN.ipynb). Lưu ý: code có thể tồn tại một số bug hoặc không tối ưu!!!
 
 ## Trained Model
 

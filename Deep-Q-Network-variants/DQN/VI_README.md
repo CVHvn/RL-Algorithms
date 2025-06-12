@@ -77,7 +77,7 @@ DQN là 1 thuật toán Reinforcement learning (RL) kết hợp thuật toán `Q
 
 ## Code Structure
 
-Code chạy thử nghiệm MCTS với `**CartPole-v1**` trong [nodebook này](DQN.ipynb). Lưu ý: code có thể tồn tại một số bug hoặc không tối ưu!!!
+Code chạy thử nghiệm DQN với `**CartPole-v1**` trong [nodebook này](DQN.ipynb). Lưu ý: code có thể tồn tại một số bug hoặc không tối ưu!!!
 
 ## Trained Model
 

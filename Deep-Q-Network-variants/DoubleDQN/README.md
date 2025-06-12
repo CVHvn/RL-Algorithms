@@ -41,7 +41,7 @@ $$L(\theta) = (y_t - Q(s_t, a_t; \theta))² = (y_t - Q_{\text{online}}(s_t, a_t)
 
 ## Code Structure
 
-The code for testing DQN with `**CartPole-v1**` is in this [notebook](Double_DQN.ipynb). Note: the code might contain some bugs or may not be optimal!!!
+The code for testing Double DQN with `**CartPole-v1**` is in this [notebook](Double_DQN.ipynb). Note: the code might contain some bugs or may not be optimal!!!
 
 ## Trained Model
 
