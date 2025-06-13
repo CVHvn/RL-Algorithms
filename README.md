@@ -6,16 +6,14 @@ This project is minimal implementation of some RL algorithms. When I read new RL
 
 # Algorithms
 
-## [Monte Carlo Search Tree](Monte-Carlo-Tree-Search)
+Each folder includes a README file (containing the algorithm description, testing results, notes, and important hyperparameters).
 
-## [AlphaZero](AlphaZero)
-
-## [Deep-Q-Network (DQN)](Deep-Q-Network-variants/DQN)
-
-## [Double Deep-Q-Network (DQN)](Deep-Q-Network-variants/DoubleDQN)
-
-## [Dueling Deep-Q-Network (DQN)](Deep-Q-Network-variants/Dueling_DQN)
-
-## [Dueling Double Deep-Q-Network D3QN](Deep-Q-Network-variants/D3QN)
+- [Monte Carlo Search Tree](Monte-Carlo-Tree-Search)
+- [AlphaZero](AlphaZero)
+- [Deep Q Learning](Deep-Q-Network-variants): 
+    - [Deep-Q-Network (DQN)](Deep-Q-Network-variants/DQN)
+    - [Double Deep-Q-Network (DQN)](Deep-Q-Network-variants/DoubleDQN)
+    - [Dueling Deep-Q-Network (DQN)](Deep-Q-Network-variants/Dueling_DQN)
+    - [Dueling Double Deep-Q-Network D3QN](Deep-Q-Network-variants/D3QN)
 
 # Reference

@@ -6,16 +6,14 @@ Project bao gồm minimal implementation của 1 số thuật toán RL. Khi tôi
 
 # Algorithms
 
-## [Monte Carlo Search Tree](Monte-Carlo-Tree-Search)
+Mỗi folder sẽ gồm file README (mô tả sơ qua về thuật toán, kết quả chạy thử và 1 số lưu ý, siêu tham số quan trọng) và file notebook.
 
-## [AlphaZero](AlphaZero)
-
-## [Deep-Q-Network (DQN)](Deep-Q-Network-variants/DQN)
-
-## [Double Deep-Q-Network (DQN)](Deep-Q-Network-variants/DoubleDQN)
-
-## [Dueling Deep-Q-Network (DQN)](Deep-Q-Network-variants/Dueling_DQN)
-
-## [Dueling Double Deep-Q-Network D3QN](Deep-Q-Network-variants/D3QN)
+- [Monte Carlo Search Tree](Monte-Carlo-Tree-Search)
+- [AlphaZero](AlphaZero)
+- [Deep Q Learning](Deep-Q-Network-variants): 
+    - [Deep-Q-Network (DQN)](Deep-Q-Network-variants/DQN)
+    - [Double Deep-Q-Network (DQN)](Deep-Q-Network-variants/DoubleDQN)
+    - [Dueling Deep-Q-Network (DQN)](Deep-Q-Network-variants/Dueling_DQN)
+    - [Dueling Double Deep-Q-Network D3QN](Deep-Q-Network-variants/D3QN)
 
 # Reference
