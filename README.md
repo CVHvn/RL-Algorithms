@@ -20,6 +20,10 @@ Each folder includes a README file (containing the algorithm description, testin
     - [Dueling Double Deep-Q-Network D3QN](Deep-Q-Network-variants/D3QN)
     - [Deep Recurrent Q-Learning (DRQN)](Deep-Q-Network-variants/DRQN):
       - [Double Deep Recurrent Q-Learning (Double-DRQN)](Deep-Q-Network-variants/DRQN) 
+- [Policy-Based Method](Policy_based_method):
+    - [Policy Gradient](Policy_based_method/Policy_Gradient):
+        - [REINFORCE](Policy_based_method/Policy_Gradient/REINFORCE)
+        - [REINFORCE with baseline](Policy_based_method/Policy_Gradient/REINFORCE_with_baseline)
 - [Monte Carlo Search Tree](Monte-Carlo-Tree-Search)
 - [AlphaZero](AlphaZero)
 
