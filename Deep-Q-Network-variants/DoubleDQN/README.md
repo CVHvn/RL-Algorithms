@@ -85,3 +85,4 @@ The model successfully reached the maximum total reward:
 - [Double DQN paper](https://arxiv.org/pdf/1509.06461)
 - [Double Q-learning paper](https://proceedings.neurips.cc/paper_files/paper/2010/file/091d584fced301b442654dd8c23b3fc9-Paper.pdf)
 - [rl-baselines3-zoo hyperparameter](https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/dqn.yml)
+- [DQN paper](https://arxiv.org/pdf/1312.5602)

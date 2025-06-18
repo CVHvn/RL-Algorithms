@@ -11,3 +11,15 @@
 
 ## Dueling Double Deep Q Network (D3QN)
 `D3QN` is a combination of the Dueling architecture from Dueling DQN: splitting Q into V and A, and the Target Network calculation method from Double DQN: using the Online Model to select the next action $a'$ and using the Target Model to calculate $Q(s', a')$.
+
+## Deep Recurrent Q-Learning (DRQN)
+`DRQN` is a combination of DQN and RNN. There are several variations of DRQN, but this project only implements two versions: the original DRQN from the [DRQN paper](https://arxiv.org/pdf/1507.06527) and Double DRQN, which is part of the [ViZDoom paper](https://arxiv.org/pdf/1801.01000).
+
+## Reference
+- [DQN paper](https://arxiv.org/pdf/1312.5602)
+- [Double DQN paper](https://arxiv.org/pdf/1509.06461)
+- [Double Q-learning paper](https://proceedings.neurips.cc/paper_files/paper/2010/file/091d584fced301b442654dd8c23b3fc9-Paper.pdf)
+- [Dueling DQN paper](https://arxiv.org/pdf/1511.06581)
+- [DRQN paper](https://arxiv.org/pdf/1507.06527)
+- [ViZDoom paper](https://arxiv.org/pdf/1801.01000)
+- [rl-baselines3-zoo hyperparameter](https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/dqn.yml)

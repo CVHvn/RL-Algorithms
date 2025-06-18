@@ -51,6 +51,7 @@ Kết quả model đã đạt tổng phần thưởng tối đa:
 - Project có dùng Chatbot để chỉnh lỗi chính tả hoặc format code!
 
 ## Reference
+- [DQN paper](https://arxiv.org/pdf/1312.5602)
 - [Double DQN paper](https://arxiv.org/pdf/1509.06461)
 - [Dueling DQN paper](https://arxiv.org/pdf/1511.06581)
 - [rl-baselines3-zoo hyperparameter](https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/dqn.yml)

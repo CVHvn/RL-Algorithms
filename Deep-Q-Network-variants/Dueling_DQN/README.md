@@ -67,3 +67,4 @@ The resulting model has reached the maximum total reward:
 ## Reference
 - [Dueling DQN paper](https://arxiv.org/pdf/1511.06581)
 - [rl-baselines3-zoo hyperparameter](https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/dqn.yml)
+- [DQN paper](https://arxiv.org/pdf/1312.5602)
