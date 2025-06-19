@@ -72,27 +72,33 @@ You can load the [REINFORCE trained model](REINFORCE\trained_model) or the [REIN
 
 ## result
 
-Each test run may yield different results due to different initial states, so 10 episodes will be tested for objectivity. i only ran the code once for a simple environment, running it more times with different seeds might produce different results!
+Each test run may yield different results due to different initial states, so 10 episodes will be tested for objectivity.
 
 ### REINFORCE
 
-Below are the REINFORCE results:
+Below are the REINFORCE results (run 2 times):
 - The model can achieve a max of 500 rewards for all 10 episodes during testing.
 - However the chart is not stable.
 
 <p float="left">
-  <img src="REINFORCE\figure\REINFORCE.png" width="500" height="300"/>
+  <img src="REINFORCE\figure\REINFORCE1.png" width="500" height="300"/>
+  <img src="REINFORCE\figure\REINFORCE2.png" width="500" height="300"/>
 </p>
 
 ### REINFORCE with baseline
 
-Below are the REINFORCE with baseline results, because the model converges very quickly, the first 1000 episodes will be plotted for easier observation:
+Below are the REINFORCE with baseline results (run 2 times), because the model converges very quickly, the first 1000 episodes will be plotted for easier observation:
 - The model quickly achieves a max of 500 rewards after about 500 episodes for all 10 episodes during testing and maintains that level throughout the training process.
 - Baseline helps the model learn significantly better than basic REINFORCE.
 
 <p float="left">
-  <img src="REINFORCE_with_baseline\figure\REINFORCE_with_baseline.png" width="500" height="300"/>
-  <img src="REINFORCE_with_baseline\figure\REINFORCE_with_baseline_first1000e.png" width="500" height="300"/>
+  <img src="REINFORCE_with_baseline\figure\REINFORCE_with_baseline1.png" width="500" height="300"/>
+  <img src="REINFORCE_with_baseline\figure\REINFORCE_with_baseline_first1000e1.png" width="500" height="300"/>
+</p>
+
+<p float="left">
+  <img src="REINFORCE_with_baseline\figure\REINFORCE_with_baseline2.png" width="500" height="300"/>
+  <img src="REINFORCE_with_baseline\figure\REINFORCE_with_baseline_first1000e2.png" width="500" height="300"/>
 </p>
 
 **note**:

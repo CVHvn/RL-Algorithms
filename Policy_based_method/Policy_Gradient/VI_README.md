@@ -72,27 +72,33 @@ Bạn có thể load [REINFORCE trained model](REINFORCE\trained_model) hoặc [
 
 ## Result
 
-Mỗi lần test có thể cho kết quả khác nhau vì init state khác nhau, nên sẽ test 10 episodes để khách quan. Mình chỉ chạy code 1 lần cho 1 environment đơn giản, có thể khi chạy nhiều hơn với seed khác nhau sẽ cho kết quả khác!
+Mỗi lần test có thể cho kết quả khác nhau vì init state khác nhau, nên sẽ test 10 episodes để khách quan. 
 
 ### REINFORCE
 
-Dưới đây là kết quả REINFORCE:
+Dưới đây là kết quả REINFORCE với 2 lần chạy thử:
 - Model có thể đạt max 500 rewards cho cả 10 episodes khi test.
 - Tuy nhiên chart không được ổn định lắm.
 
 <p float="left">
-  <img src="REINFORCE\figure\REINFORCE.png" width="500" height="300"/>
+  <img src="REINFORCE\figure\REINFORCE1.png" width="500" height="300"/>
+  <img src="REINFORCE\figure\REINFORCE2.png" width="500" height="300"/>
 </p>
 
 ### REINFORCE with baseline
 
-Dưới đây là kết quả REINFORCE with baseline, Vì model hội tựu rất nhanh nên sẽ plot 1000 episode đầu cho dễ quan sát:
+Dưới đây là kết quả REINFORCE with baseline với 2 lần chạy thử, Vì model hội tựu rất nhanh nên sẽ plot 1000 episode đầu cho dễ quan sát:
 - Model nhanh chống đạt max 500 rewards sau khoảng 500 episodes cho cả 10 episodes khi test và duy trì mức đó đến hết quá trình training.
 - baseline giúp model học tốt hơn hẳn REINFORCE cơ bản.
 
 <p float="left">
-  <img src="REINFORCE_with_baseline\figure\REINFORCE_with_baseline.png" width="500" height="300"/>
-  <img src="REINFORCE_with_baseline\figure\REINFORCE_with_baseline_first1000e.png" width="500" height="300"/>
+  <img src="REINFORCE_with_baseline\figure\REINFORCE_with_baseline1.png" width="500" height="300"/>
+  <img src="REINFORCE_with_baseline\figure\REINFORCE_with_baseline_first1000e1.png" width="500" height="300"/>
+</p>
+
+<p float="left">
+  <img src="REINFORCE_with_baseline\figure\REINFORCE_with_baseline2.png" width="500" height="300"/>
+  <img src="REINFORCE_with_baseline\figure\REINFORCE_with_baseline_first1000e2.png" width="500" height="300"/>
 </p>
 
 **Lưu ý**:
