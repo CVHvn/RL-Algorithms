@@ -84,16 +84,16 @@ The code for testing DQN with `**CartPole-v1**` is available in [this notebook](
 You can load the [trained model](trained_model).
 
 ## Hyperparameters
-DQN is sensitive to hyperparameters. For this project, I referred to the hyperparameters from the [rl-baselines3-zoo](https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/dqn.yml) to ensure the code works. They don't specify default values in the file, and the number of training steps/epochs is not clearly defined, so I set `total_steps` to 500,000:
+Note: DQN is sensitive to hyperparameters. 
 - `gamma`: 0.99
 - `batch_size`: 64
-- `buffer_size`: 100,000
-- `total_steps`: 500,000 (number of environment steps during training)
-- `start_training_step`: 1,000 (environment step to start training from)
+- `buffer_size`: 100000
+- `total_episodes`: 2000 (number of episodes training)
+- `start_training_step`: 1000 (environment step to start training from)
 - `learning_rate`: 2.3e-3
-- `train_frequency`: 256 (train the model every `train_frequency` environment steps)
-- `epochs`: 128 (train for 128 epochs each training time)
-- `update_frequency`: 10 (update target model every `update_frequency` environment steps) or `tau` = 0.005 (for soft updates every environment step)
+- `train_frequency`: 4 (train the model every `train_frequency` environment steps)
+- `epochs`: 1 (train for 128 epochs each training time)
+- `update_frequency`: 100 (update target model every `update_frequency` environment steps) or `tau` = 0.005 (for soft updates every environment step)
 - `epsilon` (ε):
     - `init`: 1.0
     - `end`: 0.04
@@ -103,16 +103,22 @@ DQN is sensitive to hyperparameters. For this project, I referred to the hyperpa
 
 ## Results
 
-Below are the results from training with and without soft updates.
+Below are the results from training with soft updates (run 2 times):
 
 <p float="left">
-  <img src="figure\soft update.png" alt="soft update" width="500" height="300"/>
-  <img src="figure\no soft update.png" alt="no soft update" width="500" height="300"/>
+  <img src="figure/DQN_soft_update1.png" alt="soft update" width="500" height="300"/>
+  <img src="figure/DQN_soft_update2.png" alt="no soft update" width="500" height="300"/>
+</p>
+
+Below are the results from training with out soft updates (run 2 times):
+
+<p float="left">
+  <img src="figure/DQN1.png" alt="soft update" width="500" height="300"/>
+  <img src="figure/DQN2.png" alt="no soft update" width="500" height="300"/>
 </p>
 
 The trained model successfully achieved the maximum total reward:
 - In both cases (with and without soft updates), the model quickly reaches the maximum total reward (500) during testing and maintains this level afterward.
-- The average reward during training fluctuates between 200-300 and shows no clear upward trend. This is not critical, as training involves exploration (randomness).
 - This environment is very simple, primarily serving to ensure that the code works, so a performance comparison between the two update methods is not conclusive.
 
 **Notes**:
@@ -121,4 +127,3 @@ The trained model successfully achieved the maximum total reward:
 
 ## References
 - [DQN Paper](https://arxiv.org/pdf/1312.5602)
-- [rl-baselines3-zoo Hyperparameters](https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/dqn.yml)
