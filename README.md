@@ -23,7 +23,8 @@ Each folder includes a README file (containing the algorithm description, testin
 - [Policy-Based Method](Policy_based_method):
     - [Policy Gradient](Policy_based_method/Policy_Gradient):
         - [REINFORCE](Policy_based_method/Policy_Gradient/REINFORCE)
-        - [REINFORCE with baseline](Policy_based_method/Policy_Gradient/REINFORCE_with_baseline)
+        - [REINFORCE with baseline (baseline = value function)](Policy_based_method/Policy_Gradient/REINFORCE_with_baseline_value)
+        - [REINFORCE with baseline (baseline = mean return)](Policy_based_method/Policy_Gradient/REINFORCE_with_baseline_mean_return)
 - [Monte Carlo Search Tree](Monte-Carlo-Tree-Search)
 - [AlphaZero](AlphaZero)
 
