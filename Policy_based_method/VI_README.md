@@ -3,6 +3,8 @@ Khác với các thuật toán value-based (mục tiêu là xây dựng phương
 
 ## [Policy Gradient](Policy_Gradient)
 Policy Gradient là 1 nhánh phổ biến trong RL, dựa vào Policy Gradient Theorem. Có nhiều thuật toán Policy Gradient:
-- [REINFORCE](Policy_Gradient\REINFORCE) hay còn gọi là Monte Carlo Policy Gradient.
-- [REINFORCE with baseline](Policy_Gradient\REINFORCE_with_baseline): thêm vào baseline để giảm phương sai.
+- [REINFORCE](Policy_Gradient/REINFORCE) hay còn gọi là Monte Carlo Policy Gradient.
+- REINFORCE with baseline: thêm vào baseline để giảm phương sai:
+    - baseline is value of state: [REINFORCE with baseline value](Policy_Gradient/REINFORCE_with_baseline_value)
+    - baseline is mean return: [REINFORCE with baseline mean return](Policy_Gradient/REINFORCE_with_baseline_mean_return)
 - Actor Critic và các biến thể nâng cao của Actor Critic như A2C, A3C, ACTKR, PPO, ACER, ...

@@ -3,6 +3,8 @@ Different from value-based algorithms (the goal is to build a method to calculat
 
 ## [policy gradient](Policy_Gradient)
 Policy gradient is a popular branch in RL, based on the policy gradient theorem. there are many policy gradient algorithms:
-- [REINFORCE](Policy_Gradient\REINFORCE) also known as Monte Carlo Policy Gradient.
-- [REINFORCE with baseline](Policy_Gradient\REINFORCE_with_baseline): adds a baseline to reduce variance.
+- [REINFORCE](Policy_Gradient/REINFORCE) also known as Monte Carlo Policy Gradient.
+- REINFORCE with baseline: adds a baseline to reduce variance:
+    - baseline is value of state: [REINFORCE with baseline value](Policy_Gradient/REINFORCE_with_baseline_value)
+    - baseline is mean return: [REINFORCE with baseline mean return](Policy_Gradient/REINFORCE_with_baseline_mean_return)
 - Actor Critic and advanced variants of Actor Critic such as A2C, A3C, ACTKR, PPO, ACER, ...
