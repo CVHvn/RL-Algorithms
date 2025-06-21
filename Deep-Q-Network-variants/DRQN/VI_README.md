@@ -38,12 +38,12 @@ Siêu tham số tương tự DQN, bạn cần lưu ý khi tunning vì thuật to
 - `batch_size`: 10 (với DRQN) và 20 (với Double_DRQN).
 - `gradient_step`: 5 (chỉ dùng với Double_DRQN, số state dùng để tính loss).
 - `buffer_size` = 1000
-- `total_steps` = 500000 (số environment step khi training)
+- `total_episodes` = 2000 (số episode training)
 - `start_training_step` = 1000 (train từ environment step nào)
 - `learning_rate` = 2.3e-3
 - `train_frequency`= 256 (train model sau mỗi `train_frequency` environment step)
 - `epochs` = 128 (mỗi lần train model sẽ train 128 epoch)
-- `update_frequency` = 10 (cập nhật target model sau `update_frequency` environment step) hoặc `tau` = 0.005 (soft update mỗi environment step)
+- `update_frequency` = 100 (cập nhật target model sau `update_frequency` environment step) hoặc `tau` = 0.005 (soft update mỗi environment step)
 - `epsilon` (ε):
     - `init`: 1
     - `end`: 0.04
@@ -51,20 +51,45 @@ Siêu tham số tương tự DQN, bạn cần lưu ý khi tunning vì thuật to
 
 ## Result
 
-Dưới đây là kết quả DRQN khi dùng soft update:
+### DRQN
+
+Dưới đây là kết quả khi train dùng soft update (chạy thử 2 lần):
 
 <p float="left">
-  <img src="figure\DRQN.png" width="500" height="300"/>
+  <img src="figure/DRQN_Soft_Update1.png" alt="soft update" width="500" height="300"/>
+  <img src="figure/DRQN_Soft_Update2.png" alt="no soft update" width="500" height="300"/>
 </p>
 
-Dưới đây là kết quả Double-DRQN khi dùng soft update
+Dưới đây là kết quả khi train không dùng soft update (chạy thử 2 lần):
 
 <p float="left">
-  <img src="figure\Double_DRQN.png" width="500" height="300"/>
+  <img src="figure/DRQN1.png" alt="soft update" width="500" height="300"/>
+  <img src="figure/DRQN2.png" alt="no soft update" width="500" height="300"/>
 </p>
 
 Kết quả model đã đạt tổng phần thưởng tối đa:
-- Model đạt tổng phần thưởng tối đa (500) khi test với cả 2 cách, tuy nhiên không tốt bằng các loại DQN thông thường (vì môi trường này khá dễ và không cần thông tin từ các bước trước!).
+- Model được train rất tệ, cần tuning siêu tham số để có kết quả tốt như các DQN khác.
+- Environment này rất đơn giản, chỉ để kiểm tra code có hoạt động không nên không thể so sánh với các thuật toán khác như DQN, Double DQN.
+
+### Double DRQN
+
+Dưới đây là kết quả khi train dùng soft update (chạy thử 2 lần):
+
+<p float="left">
+  <img src="figure/Double_DRQN_Soft_Update1.png" alt="soft update" width="500" height="300"/>
+  <img src="figure/Double_DRQN_Soft_Update2.png" alt="no soft update" width="500" height="300"/>
+</p>
+
+Dưới đây là kết quả khi train không dùng soft update (chạy thử 2 lần):
+
+<p float="left">
+  <img src="figure/Double_DRQN1.png" alt="soft update" width="500" height="300"/>
+  <img src="figure/Double_DRQN2.png" alt="no soft update" width="500" height="300"/>
+</p>
+
+Kết quả model đã đạt tổng phần thưởng tối đa:
+- Với cả soft update và không dùng soft update, model nhanh chống đạt tổng phần thưởng tối đa (500) khi test và duy trì mức 500 sau đó.
+- Double Q Learning và trick chỉ update các state giúp DRQN hoạt động tốt hơn hẳn mà không cần tuning siêu tham số.
 - Environment này rất đơn giản, chỉ để kiểm tra code có hoạt động không nên không thể so sánh với các thuật toán khác như DQN, Double DQN.
 
 **Lưu ý**:
