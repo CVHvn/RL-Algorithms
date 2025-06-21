@@ -22,4 +22,3 @@
 - [Dueling DQN paper](https://arxiv.org/pdf/1511.06581)
 - [DRQN paper](https://arxiv.org/pdf/1507.06527)
 - [ViZDoom paper](https://arxiv.org/pdf/1801.01000)
-- [rl-baselines3-zoo hyperparameter](https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/dqn.yml)
