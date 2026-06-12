@@ -101,7 +101,7 @@ As observed, performance improves dramatically as the number of episodes increas
 
 ### Training Chart
 
-Below is a chart showing the average last 100 trains and test episode rewards when running 20,000, 100,000, and 1,000 steps.
+Below is a chart showing the average last 100 trains and test episode rewards when running 20K, 100K, and 1M steps.
 
 <div align="center">
 <img src="demo\training_chart.png" width="1000" alt="training chart" />
