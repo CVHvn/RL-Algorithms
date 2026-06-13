@@ -1,12 +1,12 @@
 # Monte Carlo
 
-This folder contains an implementation of the **Every Visit Monte Carlo** algorithm applied to the `Taxi-v4` environment.
+This folder contains an implementation of the **Monte Carlo** algorithm applied to the `Taxi-v4` environment.
 
 ---
 
 ## Algorithm Overview
 
-**Monte Carlo (MC)** is a model-free reinforcement learning algorithm that learns optimal policies directly from episodes of experience. MC have two version: **First-Visit** and **Every-Visit**. I use **Every-Visit** in this test.
+**Monte Carlo (MC)** is a model-free reinforcement learning algorithm that learns optimal policies directly from episodes of experience. MC have two version: **First-Visit** and **Every-Visit**.
 * **On-Policy:** The agent evaluates and improves the same policy that it uses to make decisions.
 * **First-Visit:** The return ($G_t$) is accumulated and averaged only for the first time a state-action pair $(s, a)$ is visited within an episode.
 * **Every-Visit:** The return ($G_t$) is accumulated and averaged for the any time a state-action pair $(s, a)$ is visited within an episode.
