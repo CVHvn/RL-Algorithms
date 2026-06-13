@@ -83,13 +83,21 @@ You can tune hyperparameter to see the impact of each hyperparameter. In my opin
 
 ### Performance Comparison
 
-Below are the evaluation metrics (mean reward, standard deviation, minimum, and maximum rewards across the 100 test seeds) after training for different numbers of episodes:
+Below are the evaluation metrics (mean reward, standard deviation, minimum, and maximum rewards across the 100 test seeds) after training for different numbers of episodes (`every visit`):
 
 | Episodes | Mean Reward | Std | Min Reward | Max Reward |
 | :--- | :---: | :---: | :---: | :---: |
 | **20K** | $-89.83$ | $17.05$ | $-113.99$ | $-65.95$ |
 | **100K** | $-44.09$ | $21.19$ | $-88.62$ | $-22.37$ |
 | **1M** | $2.43$ | $8.61$ | $-14.10$ | $8.62$ |
+
+And there are result of `first visit version`:
+
+| Episodes | Mean Reward | Std | Min Reward | Max Reward |
+| :--- | :---: | :---: | :---: | :---: |
+| **20K** | $-23.18$ | $6.12$ | $-36.80$ | $-14.17$ |
+| **100K** | $-12.96$ | $6.70$ | $-24.24$ | $0.39$ |
+| **1M** | $-8.57$ | $2.92$ | $-13.92$ | $-3.67$ |
 
 Explain:
   * Mean Reward: Average of 10 runs (each run is the average of 100 episode seeds)
@@ -104,7 +112,8 @@ As observed, performance improves dramatically as the number of episodes increas
 Below is a chart showing the average last 100 trains and test episode rewards when running 20K, 100K, and 1M steps.
 
 <div align="center">
-<img src="demo\training_chart.png" width="1000" alt="training chart" />
+<img src="demo\training_chart.png" width="500" alt="training chart" />
+<img src="demo\training_chart_first_visit.png" width="500" alt="training chart first visit" />
 </div>
 
 ---
@@ -115,4 +124,5 @@ Here is a demonstration of the trained Monte Carlo agent interacting with the `T
 
 <div align="center">
 <img src="demo\MC-Taxi-v4-1M-run1.gif" width="400" alt="demo" />
+<img src="demo\MC-FV-Taxi-v4-1M-run1.gif" width="400" alt="demo" />
 </div>
