@@ -111,9 +111,9 @@ Below are the evaluation metrics (mean reward, standard deviation, minimum, and 
 | --- | --- | --- | --- | --- |
 | **1K** | $-175.94$ | $5.29$ | $-187.2$ | $-170.18$ |
 | **5K** | $6.18$ | $2.38$ | $0.47$ | $8.62$ |
-| **10K** | $8.62$ | $1.78 \times 10^{-15}$ | $8.62$ | $8.62$ |
-| **20K** | $8.62$ | $1.78 \times 10^{-15}$ | $8.62$ | $8.62$ |
-| **50K** | $8.62$ | $1.78 \times 10^{-15}$ | $8.62$ | $8.62$ |
+| **10K** | $8.62$ | $0$ | $8.62$ | $8.62$ |
+| **20K** | $8.62$ | $0$ | $8.62$ | $8.62$ |
+| **50K** | $8.62$ | $0$ | $8.62$ | $8.62$ |
 
 **Explanation of metrics:**
 
@@ -121,7 +121,7 @@ Below are the evaluation metrics (mean reward, standard deviation, minimum, and 
 * **Std:** Standard deviation, showing performance stability.
 * **Min/Max Reward:** The worst and best-case scenario returns observed during evaluation.
 
-As observed from the table, Double Q-Learning demonstrates strong convergence characteristics. Because it decoupling action selection from value evaluation using two separate Q-tables, it requires a few more exploratory steps initially compared to standard Q-Learning. However, by **10K steps**, the agent completely stabilizes, yielding the maximum optimal mean reward of $8.62$ with a standard deviation effectively dropping to zero ($1.78 \times 10^{-15}$).
+As observed from the table, Double Q-Learning demonstrates strong convergence characteristics. Because it decoupling action selection from value evaluation using two separate Q-tables, it requires a few more exploratory steps initially compared to standard Q-Learning. However, by **10K steps**, the agent completely stabilizes, yielding the maximum optimal mean reward of $8.62$.
 
 ### Compare with Standard Q-Learning & SARSA
 

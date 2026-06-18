@@ -95,10 +95,10 @@ Below are the evaluation metrics (mean reward, standard deviation, minimum, and 
 | Steps | Mean Reward | Std | Min Reward | Max Reward |
 | --- | --- | --- | --- | --- |
 | **1K** | $-93.722$ | $6.597$ | $-107.10$ | $-86.22$ |
-| **5K** | $8.620$ | $1.78 \times 10^{-15}$ | $8.62$ | $8.62$ |
-| **10K** | $8.620$ | $1.78 \times 10^{-15}$ | $8.62$ | $8.62$ |
-| **20K** | $8.620$ | $1.78 \times 10^{-15}$ | $8.62$ | $8.62$ |
-| **50K** | $8.620$ | $1.78 \times 10^{-15}$ | $8.62$ | $8.62$ |
+| **5K** | $8.620$ | $0$ | $8.62$ | $8.62$ |
+| **10K** | $8.620$ | $0$ | $8.62$ | $8.62$ |
+| **20K** | $8.620$ | $0$ | $8.62$ | $8.62$ |
+| **50K** | $8.620$ | $0$ | $8.62$ | $8.62$ |
 
 **Explanation of metrics:**
 
@@ -106,7 +106,7 @@ Below are the evaluation metrics (mean reward, standard deviation, minimum, and 
 * **Std:** Standard deviation, showing performance stability.
 * **Min/Max Reward:** The worst and best-case scenario returns observed during evaluation.
 
-As observed, Q-Learning exhibits extremely fast convergence. By **5K steps**, the agent already achieves the maximum possible mean reward. From that point onwards, the standard deviation drops to virtually zero ($1.78 \times 10^{-15}$), meaning the policy has perfectly stabilized at the optimal reward of $8.620$.
+As observed, Q-Learning exhibits extremely fast convergence. By **5K steps**, the agent already achieves the maximum possible mean reward. From that point onwards, the policy has perfectly stabilized at the optimal reward of $8.620$.
 
 ### Compare with SARSA
 

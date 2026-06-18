@@ -100,8 +100,8 @@ Below are the evaluation metrics (mean reward, standard deviation, minimum, and 
 | **1K** | $-113.070$ | $8.609$ | $-123.95$ | $-96.76$ |
 | **5K** | $6.908$ | $1.999$ | $2.42$ | $8.60$ |
 | **10K** | $8.578$ | $0.033$ | $8.52$ | $8.62$ |
-| **20K** | $8.620$ | $0.000$ | $8.62$ | $8.62$ |
-| **50K** | $8.620$ | $0.000$ | $8.62$ | $8.62$ |
+| **20K** | $8.620$ | $0$ | $8.62$ | $8.62$ |
+| **50K** | $8.620$ | $0$ | $8.62$ | $8.62$ |
 
 **Explanation of metrics:**
 
@@ -109,7 +109,7 @@ Below are the evaluation metrics (mean reward, standard deviation, minimum, and 
 * **Std:** Standard deviation, showing performance stability.
 * **Min/Max Reward:** The worst and best-case scenario returns observed during evaluation.
 
-As observed, SARSA exhibits extremely fast convergence. By **5K steps**, the agent already achieves a positive mean reward. From **20K steps** onwards, the standard deviation drops to virtually zero ($1.77 \times 10^{-15}$), meaning the policy has perfectly stabilized at the optimal reward of $8.620$.
+As observed, SARSA exhibits extremely fast convergence. By **5K steps**, the agent already achieves a positive mean reward. From **20K steps** onwards, the policy has perfectly stabilized at the optimal reward of $8.620$.
 
 ### Training Chart
 
